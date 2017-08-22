@@ -35,12 +35,15 @@ CentOS Linux release 7.1.1503 (Core)
 ##重置密码
 [root@iZ28gvqe4biZ ~]# mysql_secure_installation
 
+##创建数据库实例reviewdb设置字符集
 mysql> create database reviewdb DEFAULT CHARSET utf8 COLLATE utf8_general_ci; 
+###创建数据库用户admin[先会删除用户admin]
 mysql> drop user admin;
 mysql> create user 'admin'@'%' identified by '123456';
-
+###给用户admin赋权限[本地连接]+[远程连接]
 mysql> grant all privileges on `reviewdb`.* to 'admin'@'%' identified by '123456'; 
 mysql> grant all privileges on `reviewdb`.* to 'admin'@'localhost' identified by '123456'; 
+###更新权限
 mysql> flush privileges;  
 ##参考网址  http://www.cnblogs.com/XBlack/p/5178758.html
 #####centos7.1安装mysql5.6###############
