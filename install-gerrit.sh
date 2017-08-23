@@ -36,6 +36,9 @@ Linuxidc
 Linuxidc
 
 
+
+
+
 #####centos7.1安装mysql5.6###############
 ##检查linux版本
 [admin@server ~]$ cat /etc/redhat-release
@@ -71,3 +74,27 @@ mysql> grant all privileges on `reviewdb`.* to 'admin'@'localhost' identified by
 mysql> flush privileges;  
 ##参考网址  http://www.cnblogs.com/XBlack/p/5178758.html
 #####centos7.1安装mysql5.6###############
+
+
+
+#####centos7.1安装apach2###############
+
+##apache在centos7中是Apache HTTP server。如下对httpd的解释就是Apache HTTP Server。所以想安装apache其实是要安装httpd
+
+##1  确认没有有httpd进程
+ps -ef |grep httpd
+##2 安装httpd 
+yum -y install httpd
+.......
+Dependency Installed:
+  httpd-tools.x86_64 0:2.4.6-45.el7.centos.4                                    mailcap.noarch 0:2.1.41-2.el7                                   
+Complete!
+##3  检查httpd进程
+ps -ef |grep httpd
+##4 配置开机启动
+/sbin/chkconfig httpd on
+##5 启动httpd
+/sbin/service httpd start
+###6 
+用浏览器打开ip
+
