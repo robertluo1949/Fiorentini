@@ -1,13 +1,31 @@
-
+#!/bin/bash
+###title :搭建jenkins + gerrit 
+###
+###
+#####centos7.1 yum 的操作清除缓存###############
 yum的使用 ,清除缓存
 yum clean all  
 yum makecache
 
 yum localinstall *.rpm 
+#####centos7.1 yum 的操作清除缓存###############
+
+#####centos7.1 yum 的安装python-pip###############
+ pip --version  
+ 
+ yum -y install epel-release
+ yum install python-pip
+ yum install python-pip
+ 
+ pip --version
+ ####验证成功显示pip 版本号
+ [root@reboertcentos ~]# pip --version
+pip 9.0.1 from /usr/lib/python2.7/site-packages (python 2.7)
+#####centos7.1 yum 的操作清除缓存###############
 
 
-修改主机名
-3.要同时修改所有三个主机名：静态、瞬态和灵活主机名：
+######修改主机名
+###3.要同时修改所有三个主机名：静态、瞬态和灵活主机名：
 [root@localhost ~]# hostnamectl set-hostname Linuxidc
 [root@localhost ~]# hostnamectl --pretty
 Linuxidc
