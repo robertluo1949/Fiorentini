@@ -11,17 +11,18 @@ yum localinstall *.rpm
 #####centos7.1 yum 的操作清除缓存###############
 
 #####centos7.1 yum 的安装python-pip###############
+ ##1   查看系统是否有
  pip --version  
- 
+ ###2  安装依赖和pip
  yum -y install epel-release
  yum install python-pip
- yum install python-pip
- 
+
+ ####3 验证成功显示pip 版本号
  pip --version
- ####验证成功显示pip 版本号
- [root@reboertcentos ~]# pip --version
+ 
+[root@reboertcentos ~]# pip --version
 pip 9.0.1 from /usr/lib/python2.7/site-packages (python 2.7)
-#####centos7.1 yum 的操作清除缓存###############
+#####centos7.1 yum 的安装python-pip###############
 
 
 ######修改主机名
