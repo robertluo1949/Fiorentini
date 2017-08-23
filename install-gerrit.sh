@@ -55,9 +55,14 @@ CentOS Linux release 7.1.1503 (Core)
 [root@iZ28gvqe4biZ ~]# mysql_secure_installation
 
 ##创建数据库实例reviewdb设置字符集
-mysql> create database reviewdb DEFAULT CHARSET utf8 COLLATE utf8_general_ci; 
+
 ###创建数据库用户admin[先会删除用户admin]
 mysql> drop user admin;
+mysql> Delete FROM user Where User='admin' and Host='localhost';  
+mysql>flush privileges;
+###创建数据库reviewdb[先会删除数据库reviewdb
+mysql>drop database testDB; ##//删除用户的数据库
+mysql> create database reviewdb DEFAULT CHARSET utf8 COLLATE utf8_general_ci; 
 mysql> create user 'admin'@'%' identified by '123456';
 ###给用户admin赋权限[本地连接]+[远程连接]
 mysql> grant all privileges on `reviewdb`.* to 'admin'@'%' identified by '123456'; 
