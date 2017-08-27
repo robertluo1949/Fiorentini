@@ -98,3 +98,26 @@ ps -ef |grep httpd
 ###6 
 用浏览器打开ip
 
+#####centos7.1安装gerrit 2.13###############
+#1 各个版本下载链接
+http://gerrit-releases.storage.googleapis.com/index.html
+
+##创建 /data目录，让当前用户有权限修改删除。
+java -jar gerrit-2.11.war init -d /data/gerrit/review_site
+
+安装要修改的地方
+Database server type           [mysql]:
+
+Authentication method          [DEVELOPMENT_BECOME_ANY_ACCOUNT/?]: 
+
+
+##The index must be rebuilt before starting Gerrit:
+  java -jar gerrit.war reindex -d /data/gerrit/review_site
+
+
+
+##安装git-review
+pip install git-review
+
+
+#####centos7.1安装gerrit 2.13###############
