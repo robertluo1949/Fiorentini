@@ -128,6 +128,7 @@ pip install git-review
 /home/jenkins/jenkins_home/start.sh
 
 ##其中jenkins 的start.sh内容如下
+export JENKINS_HOME=/home/jenkins/jenkins_home
 nohup java -Dhudson.model.DirectoryBrowserSupport.CSP= -jar ${JENKINS_HOME}/jenkins.war --httpPort=9999  > ${JENKINS_HOME}/jenkins.log 2>&1 &
 
 给rc.local增加可执行权限
