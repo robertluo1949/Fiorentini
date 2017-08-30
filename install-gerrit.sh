@@ -10,6 +10,14 @@ yum makecache
 yum localinstall *.rpm 
 #####centos7.1 yum 的操作清除缓存###############
 
+#####centos7.1 不输入密码进行sudo 命令###############
+vim /etc/sudoers 
+
+## Allows people in group wheel to run all commands
+%wheel  ALL=(ALL)       ALL
+%admin   ALL=(ALL)      NOPASSWD:ALL
+#####centos7.1 不输入密码进行sudo 命令###############
+
 #####centos7.1 yum 的安装python-pip###############
  ##1   查看系统是否有
  pip --version  
@@ -106,9 +114,27 @@ http://gerrit-releases.storage.googleapis.com/index.html
 java -jar gerrit-2.11.war init -d /data/gerrit/review_site
 
 安装要修改的地方
-Database server type           [mysql]:
+***Database server type           [mysql]:
+   Database name                  [reviewdb]: 
+   Database username              [admin]: 
+   admin's password               : 
+                 confirm password : 
 
-Authentication method          [DEVELOPMENT_BECOME_ANY_ACCOUNT/?]: 
+***Authentication method          [DEVELOPMENT_BECOME_ANY_ACCOUNT/?]: 
+
+*** HTTP Daemon
+  *** 
+    Behind reverse proxy           [y/N]? 
+    Use SSL (https://)             [y/N]? 
+    Listen on address              [*]: 
+    Listen on port                 [8080]: 8999
+    Canonical URL                  [http://server.gerrit:8999/]: http://192.168.115.129:8999/
+
+*** Gerrit Administrator
+    Create administrator user      [Y/n]? y
+    username                       [admin]: admin
+    name                           [Administrator]: 
+    HTTP password                  [secret]: 123456
 
 
 ##The index must be rebuilt before starting Gerrit:
