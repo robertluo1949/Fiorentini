@@ -119,5 +119,18 @@ Authentication method          [DEVELOPMENT_BECOME_ANY_ACCOUNT/?]:
 ##安装git-review
 pip install git-review
 
-
 #####centos7.1安装gerrit 2.13###############
+
+#####centos7.1自动重启jenkins 和gerrit ###############
+##修改/etc/rc.d/rc.locl 增加启动命令
+
+/home/gerrit2/review_site/bin/gerrit.sh start
+/home/jenkins/jenkins_home/start.sh
+
+##其中jenkins 的start.sh内容如下
+nohup java -Dhudson.model.DirectoryBrowserSupport.CSP= -jar ${JENKINS_HOME}/jenkins.war --httpPort=9999  > ${JENKINS_HOME}/jenkins.log 2>&1 &
+
+给rc.local增加可执行权限
+chmod +x /etc/rc.d/rc.local
+#####centos7.1自动重启jenkins 和gerrit ###############
+
