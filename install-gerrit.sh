@@ -18,6 +18,19 @@ vim /etc/sudoers
 %admin   ALL=(ALL)      NOPASSWD:ALL
 #####centos7.1 不输入密码进行sudo 命令###############
 
+#####centos7.1 yum 安装openjdk###############
+[root@localhost ~]# yum search java|grep jdk
+   java-1.8.0-openjdk.x86_64 : OpenJDK Runtime Environment
+##2.选择版本,进行安装
+
+//选择1.8版本进行安装
+[root@localhost ~]# yum install java-1..0-openjdk
+
+   
+//安装完之后，默认的安装目录是在: /usr/lib/jvm/java-1.8.0-openjdk.x86_64
+#####centos7.1 yum 安装openjdk###############
+
+
 #####centos7.1 yum 的安装python-pip###############
  ##1   查看系统是否有
  pip --version  
