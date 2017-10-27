@@ -78,6 +78,17 @@ CentOS Linux release 7.1.1503 (Core)
 ##重置密码
 [root@iZ28gvqe4biZ ~]# mysql_secure_installation
 
+
+**********************修改mysql root 密码
+mysql -u root -p  #登录
+mysql>set global validate_password_policy=0; #密码强度设为最低等级
+mysql>set global validate_password_length=4; #密码允许最小长度为4
+mysql>flush privileges;                      #更新授权表，生效
+
+##修改所以用户的密码为JDev
+mysql>ALTER USER USER()  IDENTIFIED BY "JDev";
+**********************自行下载安装包，自行安装
+
 **********************自行下载安装包，自行安装
 # wget http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
 # rpm -ivh mysql-community-release-el7-5.noarch.rpm
