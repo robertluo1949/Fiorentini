@@ -78,6 +78,13 @@ CentOS Linux release 7.1.1503 (Core)
 ##重置密码
 [root@iZ28gvqe4biZ ~]# mysql_secure_installation
 
+**********************自行下载安装包，自行安装
+# wget http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
+# rpm -ivh mysql-community-release-el7-5.noarch.rpm
+# yum install mysql-community-server*
+##参考链接：http://www.cnblogs.com/starof/p/4680083.html
+**********************
+
 ##创建数据库实例reviewdb设置字符集
 
 ###创建数据库用户admin[先会删除用户admin]
